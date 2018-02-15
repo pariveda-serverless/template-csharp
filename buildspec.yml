@@ -32,7 +32,8 @@ phases:
     commands:
       # Deploy Application
       - dotnet restore
-      - dotnet build
+      - dotnet lambda package --configuration release --framework netcoreapp2.0 --output-package bin/release/netcoreapp2.0/deploy-package.zip
+      #- dotnet build
       - serverless deploy
 
   post_build:
@@ -45,4 +46,4 @@ phases:
       #- sls remove
 artifacts:
   files:
-    - bin/Debug/netcoreapp2.0/*
+    - bin/release/netcoreapp2.0/*
