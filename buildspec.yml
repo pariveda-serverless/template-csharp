@@ -30,7 +30,7 @@ phases:
       # EXAMPLE: npm lint, npm test, etc.
   build:
     commands:
-      # Deploy Application
+      # Deploy Application trigger build
       - dotnet restore
       - dotnet lambda package --configuration release --framework netcoreapp2.0 --output-package bin/release/netcoreapp2.0/deploy-package.zip
       #- dotnet build
